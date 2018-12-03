@@ -1,75 +1,82 @@
+#include <bits/stdc++.h>
+using namespace std;
+
 typedef long double Num;
-const Num PI = 3.141592653589793238462643383279L;
 typedef complex<Num> Complex;
 
-void fft_main(int n, Num theta, Complex a[]) {
-	for(int m = n; m >= 2; m >>= 1) {
-		int mh = m >> 1;
-		Complex thetaI = Complex(0, theta);
-		for (int i = 0; i < mh; ++i) {
-			Complex w = exp((Num)i*thetaI);
-			for(int j = i; j < n; j += m) {
-				int k = j + mh;
-				Complex x = a[j] - a[k];
-				a[j] += a[k];
-				a[k] = w * x;
+void FFT(Complex P[], int n, int oper) {
+  for (int i = 1, j = 0; i < n - 1; i++) {
+    for (int s = n; j ^= s >>= 1, ~j & s;);
+    if (i < j) swap(P[i], P[j]);
+  }
+  for (int d = 0; (1 << d) < n; d++) {
+    int m = 1 << d, m2 = m * 2;
+    Complex unit_p0(cos(-2*M_PI/m2*oper), sin(-2*M_PI/m2*oper));
+    for (int i = 0; i < n; i += m2) {
+      Complex unit(1);
+      for (int j = 0; j < m; j++) {
+        Complex &P1 = P[i + j + m], &P2 = P[i + j];
+        Complex t = unit * P1;
+        P1 = P2 - t; P2 = P2 + t;
+        unit = unit * unit_p0;
+      }
+    }
+  }
+}
+vector<int> mul(const vector<int> &a, const vector<int> &b) {
+  vector<int> ret(max(0, (int) a.size() + (int) b.size() - 1), 0);
+  int len = 1; while (len < (int)ret.size()) len <<= 1;
+  static Complex A[100000], B[100000], C[100000];
+  for (int i = 0; i < len; i++) A[i] = i < (int)a.size() ? a[i] : 0;
+  for (int i = 0; i < len; i++) B[i] = i < (int)b.size() ? b[i] : 0;
+  FFT(A, len, 1); FFT(B, len, 1);
+  for (int i = 0; i < len; i++) C[i] = A[i] * B[i];
+  FFT(C, len, -1); for (int i = 0; i < (int)ret.size(); i++) ret[i] = (long long)((C[i]/Complex(len,0)).real() + 0.5);
+  return ret;
+}
+
+// online FFT
+
+void f(int l, int r) {
+	if (l == r) {
+		c2[l] += a[l]*b[0];
+		a[l+1] = c2[l];
+		return;
+	}
+	int mid = (l + r) >> 1;
+	f(l, mid);
+	FOR (i, l, mid) FOR (j, mid+1, r) c2[j] += a[i]*b[j-i];
+	f(mid+1, r);
+}
+
+{
+	FOR (i, 0, N-1) b[i] = i+2;
+	a[0] = 1;
+
+	// naive
+	FOR (i, 0, N-1) {
+		FOR (j, 0, i) c0[i] += a[j]*b[i-j];
+		a[i+1] = c0[i];
+	}
+
+	// optimized
+	FOR (i, 0, N-1) {
+		c1[i] += a[i]*b[0];
+		c1[i+1] += a[i]*b[1];
+		if (i) {
+			int K = (1 << __builtin_ctz(i));
+			for (int k = 2; k <= K; k*=2) {
+				// do fft here
+				FOR (j, i-k, i-1) {
+					FOR (J, k, k+k-1) {
+						c1[j+J] += a[j]*b[J];
+					}
+				}
 			}
 		}
-		theta *= 2;
-	}
-	int i = 0;
-	for(int j = 1; j < n - 1; ++j) {
-		for(int k = n >> 1; k > (i ^= k); k >>= 1) ;
-		if(j < i) swap(a[i], a[j]);
+		a[i+1] = c1[i];
 	}
 }
-void fft(int n, Complex a[], bool rev) {
-	if (rev){
-		fft_main(n, -2 * PI / n, a);
-		for (int i = 0; i < n; ++i) a[i] /= n;
-	}
-	else
-		fft_main(n, 2 * PI / n, a); 	
-}
-void convolution(vector<Complex> &v, vector<Complex> &w) {
-	int n = 1, vwn = v.size() + w.size() - 1;
-	while(n < vwn) n <<= 1;
-	v.resize(n), w.resize(n);
-	fft(n, &v[0], 0);
-	fft(n, &w[0], 0);
-	for (int i = 0; i < n; ++i) v[i] *= w[i];
-	fft(n, &v[0], 1);
-}
-
-void fft2(vector<vector<Complex>> & a, bool rev) {
-	int n = a.size();
-	int m = a[0].size();
-	for (int i = 0; i < n; ++i) {
-		fft(m, &a[i][0], rev);
-	}
-	for (int i = 0; i < m; ++i) {
-		vector<Complex> t;
-		for (int j = 0; j < n; ++j) t.push_back(a[j][i]);
-		fft(n, &t[0], rev);
-		for (int j = 0; j < n; ++j) a[j][i] = t[j];
-	}
-}
-void convolution2(vector<vector<Complex>> &v, vector<vector<Complex>> &w) {
-	int n = 1, vwn = v.size() + w.size() - 1;
-	while(n < vwn) n <<= 1;
-	v.resize(n), w.resize(n);
-	int m = 1, vwm = v[0].size() + w[0].size() - 1;
-	while(m < vwm) m <<= 1;
-	for (auto& it : v) it.resize(m);
-	for (auto& it : w) it.resize(m);
-	fft2(v, 0);
-	fft2(w, 0);
-	for (int i = 0; i < n; ++i) for (int j = 0; j < m; ++j) v[i][j] *= w[i][j];
-	fft2(v, 1);
-}
-
-
-
 
 const int MOD = 100003;
 vector<int> calc_dfs(const vector<int> &A, int l, int r) {

@@ -1,53 +1,47 @@
 
 
 
-struct matrix {
-    int a[32][32];
-    int n;
-    int INF, INF2;
-    matrix(int n, int INF) : n(n), INF(INF), INF2(INF*INF) {
-        FOR(i, 0, n - 1) FOR (j, 0, n - 1) a[i][j] = i == j;
+const int mod = 1e9 + 7;
+const int SZ = 3;
+struct vec{
+    int arr[SZ];
+    void reset(){
+        memset(arr , 0 , sizeof(arr));
     }
-
-    matrix(vvi b, int INF) : INF(INF), INF2(INF*INF) {
-        n = sz(b);
-        FOR(i, 0, sz(b) - 1) FOR(j, 0, sz(b) - 1) a[i][j] = b[i][j];
+};
+struct matrix{
+    int arr[SZ][SZ];
+    void reset(){
+        memset(arr , 0 , sizeof(arr));
     }
-
-    int* operator[](int x) {return a[x];}
-
-    matrix operator*(matrix b) {
-        matrix ans(n, INF);
-        FOR (i, 0, n - 1) {
-            FOR (j, 0, n - 1) {
-                int x = 0;
-                FOR (k, 0, n - 1) {
-                    x += a[i][k] * b[k][j];
-                    if (x >= INF2) x -= INF2;
+    void makeiden(){
+        reset();
+        for(int i = 0 ; i < SZ ; ++i){
+            arr[i][i] = 1;
+        }
+    }
+    inline matrix operator * (const matrix &o) const {
+        matrix res;
+        for(int i = 0 ; i < SZ ; ++i){
+            for(int j = 0 ; j < SZ ; ++j){
+                unsigned long long sum = 0;
+                for(int k = 0 ; k < SZ ; ++k){
+                    sum += 1ULL * arr[i][k] * o.arr[k][j];
                 }
-                ans[i][j] = x % INF;
+                res.arr[i][j] = sum % mod;
             }
         }
-        return ans;
+        return res;
     }
-    matrix operator+(matrix b) {
-        matrix ans(n, INF);
-        FOR (i, 0, n - 1) {
-            FOR (j, 0, n - 1) {
-                ans[i][j] = a[i][j] + b[i][j];
-                if (ans[i][j] >= INF) ans[i][j] -= INF;
+    inline vec operator * (const vec &o) const {
+        vec res;
+        for(int i = 0 ; i < SZ ; ++i){
+            unsigned long long sum = 0;
+            for(int k = 0 ; k < SZ ; ++k){
+                sum += 1ULL * arr[i][k] * o.arr[k];
             }
+            res.arr[i] = sum % mod;
         }
-        return ans;
-    }
-    matrix operator^(bigint pw) {
-        matrix ans(n, INF), now = *this;
-        while (pw > 0) {
-            if (pw % 2 == 1)
-                ans = ans * now;
-            now = now * now;
-            pw = pw / 2;
-        }
-        return ans;
+        return res;
     }
 };

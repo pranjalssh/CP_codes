@@ -1,0 +1,64 @@
+//<http://d.hatena.ne.jp/todo314/20111220>
+//!FloorDiv.cppにfloor(x/y)の関数がある。
+
+■floorとceilと不等式
+実数xに対して、
+	x - 1 ＜ floor(x) ≦ x ≦ ceil(x) ＜ x + 1
+
+実数xと整数nに対して、
+	x ＜ n <-> floor(x) ＜ n
+	n ＜ x <-> n ＜ ceil(x)
+	x ≦ n <-> ceil(x) ≦ n
+	n ≦ x <-> n ≦ floor(x)
+
+整数n, *正* 整数mに対して、
+	ceil(n / m) ＝ floor((n + m - 1) / m)
+
+■区間に含まれる整数点の個数
+どれもmax(0, ...)とすること！
+[a,b]	floor(b) - ceil(a) + 1
+[a,b)	ceil(b)  - ceil(a)
+(a,b]	floor(b) - floor(a)
+(a,b)	ceil(b)  - floor(a) - 1
+
+■lower_boundとupper_bound
+昇順にソートされている場合のまとめ：
+	a[i] >= val である最左の位置:    lower_bound(...)
+	a[i] >  val である最左の位置:    upper_bound(...)
+	a[i] <= val である最右の位置: -- upper_bound(...)
+	a[i] <  val である最右の位置: -- lower_bound(...)
+
+rbeginを使うときはi = size() - (it - rbegin()) - 1 として左からに直す。
+ソート	順序	比較	関数		値表明		index	前の値
+昇順	begin	lesser	lower_bound	a[i] >= val	最左のi	a[i-k] <  val
+昇順	begin	lesser	upper_bound	a[i] >  val	最左のi	a[i-k] <= val
+昇順	rbegin	greater	lower_bound	a[i] <= val	最右のi	a[i+k] >  val
+昇順	rend	greater	upper_bound	a[i] <  val	最右のi	a[i+k] >= val
+降順	begin	greater	lower_bound	a[i] <= val	最左のi	a[i-k] >  val
+降順	begin	greater	upper_bound	a[i] <  val	最左のi	a[i-k] >= val
+降順	rbegin	lesser	lower_bound	a[i] >= val	最右のi	a[i+k] <  val
+降順	rend	lesser	upper_bound	a[i] >  val	最右のi	a[i+k] <= val
+
+■chainとantichain
+wikipedialにはnonstrict partial orderの方で載っているが、strictのほうが使う？ので。
+どれもstrict partial orderであることを要求していることに注意！(irreflexivity, transitivity)
+特にグラフの場合、irreflexivityによってDAGである必要があり、transitivityによって推移的である必要がある。
+chain: strictly orderedな列。
+incomparable: x ＜ y でも x ＞ y でもないこと。x ＝ yの場合はそうだが、それ以外の場合もある(例えば区間関係で一部交差など)。
+antichain: どの2つの要素もincomparableな集合。
+Dilworth's theorem, Mirsky's theorem:
+	chainへの分割の最小数 ＝ antichainの最大長さ
+	antichainへの分割の最小数 ＝ chainの最大長さ
+・制約が小さい場合は解けるので、まずは変に変形を考えずに、
+	単にDAGのパス被覆として2部マッチングで解くことを考えること！O(nm)！
+
+■最短経路の双対問題
+x_iを変数・sを頂点・cを定数とする。
+実際にはx_iがiまでの距離・sがソース頂点・cが辺の重みとなる。
+・x_iは整数のみとすることが可能(整数性)。もしくは小数でも可能(答えは変わらない)
+・x_s = 0
+・x_a + c >= x_b のときa→bに重みcの辺を張る。全ての追加の制約はこの形
+	・x_a + x_b ?= c の時はx_aまたはx_bを負にする(2部グラフである必要がある)
+	・x_a >= c など1変数の時は x_s = 0 を使う。
+・s→tの最短距離 = 最小の x_t
+・negative cycleが存在 <-> 解が存在しない

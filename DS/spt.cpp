@@ -1,16 +1,23 @@
-
-vvi r(1, vi(n, -1));
-
-
-FOR(i, 0, n - 1)r[0][i] = i;
-for (int i = 1; (1 << i) <= n; ++i) {
-    r.push_back(vi(n, -1));
-    for (int j = 0; j + (1 << i) <= n; ++j) {
-        r[i][j] = a[r[i - 1][j]] > a[r[i - 1][j + (1 << (i - 1))]] ? r[i - 1][j] : r[i - 1][j + (1 << (i - 1))];
-    }
-}
-
-auto rmq = [&](int l, int r) {
-    int lg = 31 - __builtin_clz(r - l + 1);
-    return a[r[lg][l]] > a[r[lg][r - (1 << lg) + 1]] ? r[lg][l] : r[lg][r - (1 << lg) + 1];
+template<class T>
+struct Spt {
+	vector<T> a;
+	vector<vector<int>> dp;
+	int n;
+	Spt(const vector<T> &a) : a(a), dp(21), n(a.size()) {
+		FOR (i, 0, 20) dp[i].resize(n);
+		FOR (i, 0, n - 1) dp[0][i] = i;
+		FOR (i, 1, 20) {
+			FOR (j, 0, n - 1) if (j + (1 << i) <= n) {
+				int x = dp[i-1][j];
+				int y = dp[i-1][j + (1<<(i-1))];
+				dp[i][j] = a[x] < a[y] ? x : y;
+			}
+		}
+	}
+	int rmq(int i, int j) {
+		int lg = 31 - __builtin_clz(j-i+1);
+		int x = dp[lg][i];
+		int y = dp[lg][j - (1 << lg) + 1];
+		return a[x] < a[y] ? x : y;
+	}
 };

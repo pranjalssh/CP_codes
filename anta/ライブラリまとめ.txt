@@ -1,0 +1,1270 @@
+・ライブラリリンク
+	・maehara/C++: <http://www.prefield.com/algorithm/index.html>
+		・Spagetti Source
+	・<http://acm-icpc.aitea.net/index.php?2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+		・2005年ということで古い, リンク切れ多い
+	・delta2323/C++: <https://github.com/delta2323/algorithm_library/tree/master/src>
+	・team kkntkr/C++: <http://nya3.jp/libicpc/>
+	・igor/C++: <http://shygypsy.com/tools/>
+	・cos65535/C++ <https://github.com/cos65535/ICPCLibrary/>
+	・todo/Java: <https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・todo/C++: <https://www.dropbox.com/s/xfvj6n5jhg5jso4/library.pdf>
+	・cds/C++: <https://github.com/fclaude/libcds>
+	・cafelier/C++: <http://www.kmonos.net/repos/topcoder/dir?ci=tip>
+	・indy256/Java: <https://sites.google.com/site/indy256/>
+	・uwi/Java: <https://twitter.com/uwitenpen/status/441949412210667520>
+
+・その他実装リンク
+	・boost <http://www.boost.org/doc/libs/>
+		・関係ありそうなもの：
+			・Geometry
+			・Graph
+			・Math
+			・Multiprecision
+			・Polygon
+	・CGAL <http://www.cgal.org/>
+		・幾何ライブラリ
+	・LEMON <http://lemon.cs.elte.hu/pub/doc/latest/index.html>
+		・グラフライブラリ。最適化
+	・NetworkX <http://networkx.github.io/documentation/latest/reference/index.html>
+		・グラフライブラリ
+	・SAGA <http://www.sagemath.org/doc/reference/index.html>
+		・数学ライブラリ。グラフ・幾何なども含む
+	・GMP <http://gmplib.org/>
+		・最も高速でポピュラーな多倍長整数ライブラリ。有理数や浮動小数点数ライブラリも含む
+	・lp_solve <http://lpsolve.sourceforge.net/>
+		・整数計画法ライブラリ
+	・GLPK <http://www.gnu.org/software/glpk/>
+		・整数計画法ライブラリ
+	・<http://www.satcompetition.org/>
+		・SAT solve competition。色々とリンクがある
+	・minisat: <http://minisat.se/>
+		・小さなSAT solver
+	・<http://www.alpertron.com.ar/>
+		・2次ディオファントス方程式
+	・<http://www.keithschwarz.com/interesting/>
+		・色々なアルゴリズムの実装。マニアックなものも。
+			言語はいろいろ(C++/Java/Haskell/Python/JavaScript)
+	・<http://graphics.stanford.edu/~seander/bithacks.html>
+		・ビット演算によるトリックたち
+	・<http://en.wikipedia.org/wiki/List_of_numerical_libraries>
+	・<http://en.wikipedia.org/wiki/List_of_optimization_software>
+
+・参照リンク
+	・<http://wcipeg.com/wiki/Main_Page>
+		・競プロwiki。いろいろ
+	・<http://www.orsj.or.jp/~wiki/wiki/index.php/%E3%83%A1%E3%82%A4%E3%83%B3%E3%83%9A%E3%83%BC%E3%82%B8>
+		・様々な最適化問題や用語などを日本語で
+	・<http://www.graphclasses.org/index.html>
+		・無向グラフクラスのデータベース
+	・<http://xlinux.nist.gov/dads/>
+		・アルゴリズムとデータ構造の索引
+	・<http://www.ee.ic.ac.uk/hp/staff/dmb/matrix/intro.html>
+		・色々なSpecial Matrixの性質
+	・<http://www.nada.kth.se/~viggo/wwwcompendium/>
+		・NP-completeな最適化問題たち
+	・<http://dimacs.rutgers.edu/Challenges/index.html>
+		・毎年開催の効率的なアルゴリズム・実装のコンペティション。過去の回の論文がある
+	・<http://iwi.tc/wiki/index.php?FrontPage>
+		・グラフ系論文の概要解説
+	・<http://en.wikipedia.org/wiki/List_of_algorithms>
+	・<http://en.wikipedia.org/wiki/List_of_data_structures>
+	・<http://en.wikipedia.org/wiki/List_of_graph_theory_topics>
+
+・理論系
+	・http://fpt.wikidot.com/
+
+・最適化
+	・二分探索
+		・？
+	・黄金探索
+		・<http://www.prefield.com/algorithm/math/findmax.html>
+		・!GoldenSectionSearch.cpp
+	・単体法
+		・<https://sites.google.com/site/indy256/algo/simplex_algorithm>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Math/Simplex.cpp>
+		・<http://www.prefield.com/algorithm/math/two_stage_simplex.html>
+		・!libuwi/utils/LP.java
+		・!libuwi/utils/LPFrac.java
+		・小さくないケースだとうまく動かない: #Simplex.cpp
+	・分枝限定法
+		・小さくないケースだとうまく動かない: #IntegerProgramming.cpp
+	・準ニュートン法
+		・<http://www.prefield.com/algorithm/math/quasi_newton.html>
+
+・数値計算
+	・ニュートン法
+		・収束は早いが安定性に欠ける
+		・？
+	・オイラー法 (微分方程式の数値的解法)
+		・<http://acm-icpc.aitea.net/index.php?plugin=attach&pcmd=open&file=25p_lib%28final%20master%29.pdf&refer=2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+	・ルンゲッタ法 (微分方程式の数値的解法)
+		・4次: <http://acm-icpc.aitea.net/index.php?plugin=attach&pcmd=open&file=25p_lib%28final%20master%29.pdf&refer=2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+	・Composite Simpson's rule (数値積分)
+		・!libuwi/utils/math/Integral.java
+
+・多項式
+	・基本演算
+		・#Polynomial.cpp
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Structure/Polynomial.cpp>
+	・多項式の根
+		・<https://github.com/indy256/wikialgo/blob/master/cpp/polynom-roots.cpp>
+			・乱択？アルゴリズムの詳細は不明
+	・2次方程式
+		・!QuadraticEquation.cpp
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/math/PolySolver.java
+	・2次不等式
+		・!libuwi/utils/math/PolySolver.java
+	・pretty print
+		・<http://shygypsy.com/tools/library.cpp>
+		・#Polynomial.cpp
+	・多項式補間
+		・#Polynomial.cpp
+		・!libuwi/utils/math/Guess.java
+	・多項式の区間内の解の個数
+		・!libuwi/utils/math/PolySolver.java
+
+・ディオファントス方程式
+	・ペル方程式
+		・!libuwi/utils/math/ContinuedFraction.java
+
+・行列
+	・基本演算
+		・!Matrix.cpp
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Structure/Matrix.cpp>
+		・!libuwi/utils/math/Mat.java
+			・Strassen's algorithmも
+		・!libuwi/utils/math/MatModulo.java
+		・!libuwi/utils/math/MatModuloF.java
+	・ガウスの消去法 O(n^3)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Math/GaussElimination.cpp>
+		・!GaussialElimination.cpp
+		・!libuwi/utils/math/Equation.java
+		・!libuwi/utils/math/MatModulo.java
+	・LU分解 O(n^3)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/math/Mat.java
+			・線型方程式・determinant
+	・3重対角行列のLU分解 O(n)
+		・!libuwi/utils/math/Mat.java
+			・線型方程式
+	・逆行列
+		・!libuwi/utils/math/MatModulo.java
+	・determinant (行列式) O(n^3)
+		・<http://www.prefield.com/algorithm/math/matrix.html>
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!Determinant.cpp
+		・!libuwi/utils/math/Mat.java
+	・trace
+		・<http://www.prefield.com/algorithm/math/matrix.html>
+	・rank
+		・<http://www.prefield.com/algorithm/math/matrix.html>
+		・!libuwi/utils/math/Mat.java
+		・ビット並列化: !libuwi/utils/math/MatBool.java
+		・!libuwi/utils/math/MatModulo.java
+	・固有値・固有ベクトル
+		・<http://www.prefield.com/algorithm/math/eigensystem.html>
+	・Reduced Row Echelon Form
+		・!ReducedRowEchelonForm.cpp
+	・三角Teplitz行列の乗算 O(n^2)
+		・!Matrix.cpp
+		・!libuwi/utils/math/MatModulo2.java
+		・!libuwi/utils/math/MatModulo.java
+	・巡回行列の乗算 O(n^2)
+		・!Matrix.cpp
+		・!libuwi/utils/math/MatModulo2.java
+	・ブロック行列の乗算
+		・!Matrix.cpp
+		・!libuwi/utils/math/MatModulo.java
+	・Teplitz行列上の線形連立方程式 O(n^2)
+		・<http://www.kmonos.net/repos/topcoder/artifact/bf7f1d164fa346363d8bc257b4591b1250f97cc5>
+	・三重対角行列上の線形連立方程式 O(n)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/math/Equation.java
+	・五重対角行列上の線形連立方程式 O(n)
+		・!libuwi/utils/math/Equation.java
+	・SOR法 O(n^2 α)
+		・線形連立方程式の反復法。
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・固定長行列
+		・2×2,掛け算だけ: #Mat22.cpp
+	・期待値(遷移の行列を線型方程式にする)
+		・!libuwi/utils/math/Mat.java
+	・行列の基本変形
+		・!libuwi/utils/math/Mat.java
+		・!libuwi/utils/math/MatModulo.java
+	・行列の転置
+		・!libuwi/utils/math/Mat.java
+	・線形係数漸化式
+		・!libuwi/utils/math/MatModulo.java
+			・乗算O(n^2)
+		・!libuwi/utils/math/LinearRecurrence.java
+			・値を求める O(m^2 log n)
+
+・多倍長整数・小数
+	・基本演算
+		・<https://sites.google.com/site/indy256/algo_cpp/bigint>
+			・1000000000進法
+		・<http://shygypsy.com/tools/BigInt.cpp>
+			・10進法
+		・足し算・引き算だけ: #Bits.cpp
+	・基数変換ナイーブ
+		・<https://sites.google.com/site/indy256/algo_cpp/bigint>
+	・カラツバ乗算
+		・<https://sites.google.com/site/indy256/algo_cpp/bigint>
+	・固定長整数
+		・不完全,任意の2倍: #DoubleInt.cpp
+		・？
+	・開平法 (平方根の計算)
+		・!libuwi/utils/math/Guess.java
+	・Multiply by inverse
+		・!Div2By1.cpp
+	・MulDiv
+		・!MulDivLL.cpp
+			・浮動小数点数で近似してやる
+		・!libuwi/utils/math/Modulo.java
+
+・有理数
+	・基本演算
+		・!Ratio.cpp
+		・!libuwi/utils/math/F.java
+		・!libuwi/utils/math/FB.java
+	・有理数の連分数表現
+		・<http://shygypsy.com/tools/number.cpp>
+	・Stern-Brocot木
+		・!libuwi/utils/math/SternBrocot.java
+
+
+・素数
+	・素数判定 O(√n)
+		・？
+	・Millar-Rabin
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Math/MillarRabin.cpp>
+		・!libuwi/utils/math/Factor.java
+		・#IsPrime.cpp
+	・ガウス素数判定
+		・<http://www.prefield.com/algorithm/math/isgprime.html>
+	・素因数分解 O(√n)
+		・!PrimeSieve.cpp
+	・素因数分解テーブル O(n log log n)
+		・!PrimeFactors.cpp
+	・約数列挙 O(√n)
+		・!PrimeSieve.cpp
+	・素因数分解上での演算
+		・!PrimeSieve.cpp
+	・Eratosthenesの篩 O(n log log n)
+		・!PrimeSieve.cpp
+	・Atkinの篩
+		・!libuwi/utils/math/Sieve2.java
+	・区間篩 O(√R log log √R + (R-L) log log √R)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・Meissel-Lehmer method (素数の数を数える)
+		・<https://ideone.com/YAIVgc>
+	・Pollard's ρ
+		・乱択素因数分解
+		・n が同じ桁数の 2 素数の積のとき，O(n^{1/4} polylog(n)) ステップ実行すると発見確率が約50％
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/math/BigNum.java
+	・メビウスのμ関数 O(√n)
+		・!MobiusMu.cpp
+		・!libuwi/utils/math/Mobius.java
+			・区間篩・Mertens function
+	・オイラーのφ関数 O(√n/log n)
+		・!libuwi/utils/math/Totient.java
+	・オイラーのφ関数列挙 O(n log log n)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/math/Totient.java
+	・オイラーのφ関数区間列挙
+		・!libuwi/utils/math/Totient.java
+	・メビウスのμ関数列挙 O(n log log n)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・カーマイケルのλ関数
+		・!libuwi/utils/math/Modulo.java
+
+・法演算
+	・基本演算
+		・!ModInt.hpp
+		・!GModInt.cpp
+		・#LazyModInt.cpp
+			・総和を取るループで剰余演算をしないようにする
+		・#RelaxedModInt.cpp
+			・一時式中でなるべく剰余演算をしないようにする
+		・!libuwi/utils/math/Modulo.java
+	・逆元
+		・!implements/Util/ModInt.hpp
+		・!GModInt.cpp
+		・!libuwi/utils/math/Modulo.java
+	・n以下の全ての逆元 O(n)
+		・#ModInverseAll.cpp
+		・!libuwi/utils/math/Modulo.java
+	・線形合同式 O(log(MOD))
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/math/Modulo.java
+	・線形連立合同式
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・離散対数問題 O(√MOD)
+		・#DiscreteLogarithm.cpp
+	・中国人剰余定理 O(n log MOD)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Math/ChineseRemainderTherom.cpp>
+	・ヤコビ記号
+		・<http://www.prefield.com/algorithm/math/jacobi.html>
+	・平方剰余
+		・<http://www.prefield.com/algorithm/math/sqrtmod.html>
+		・!libuwi/utils/math/Modulo.java
+			・Tonelli-Shanks algorithm・Cipolla's algorithm
+		・!libuwi/utils/math/SqrtMod.java
+			・解列挙
+	・multiplicative order
+		・#MultiplicativeOrder.cpp
+	・累乗剰余のオフセット
+		・#PowerModOffset.cpp
+	・primitive rootかどうかの判定
+		・!libuwi/utils/math/Modulo.java
+	・primitive rootを求める
+		・!libuwi/utils/math/Modulo.java
+			・乱択
+	・n-th root of unityの列挙
+		・!libuwi/utils/math/Modulo.java
+
+・何かの～nの和
+	・等比数列の和 "∑_{i=1}^n a^i" O(log n)
+		・!libuwi/utils/math/Modulo.java
+	・k乗数の和 "∑_{i=1}^n i^k" O(k^2)
+		・!PowerSum.cpp
+		・<http://acm-icpc.aitea.net/index.php?plugin=attach&pcmd=open&file=25p_lib%28final%20master%29.pdf&refer=2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+		・!libuwi/utils/math/Sum.java
+	・等差数列のn乗の和 "∑_{i=0}^{m-1} (a+di)^n"
+		・!libuwi/utils/math/Sum.java
+	・剰余の和 "∑_{i=1}^n (n mod i)" O(√n)
+		・<http://acm-icpc.aitea.net/index.php?plugin=attach&pcmd=open&file=25p_lib%28final%20master%29.pdf&refer=2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+		・!libuwi/utils/math/Sum.java
+	・重み付き剰余の和 "∑_{i=1}^n i*(n mod i)" O(√n)
+		・!libuwi/utils/math/Sum.java
+	・floor(線形)の和 "∑_{i=0}^n floor((ai+b)/c)" O(log n)
+		・？ (WifiPlanet.cpp)
+		・!libuwi/utils/math/Sum.java
+	・除算の和: "∑_{i=1}^n n/i" O(√n)
+		・!libuwi/utils/math/Sum.java
+	・2次元除算の和: "∑_{i=1}^n ∑_{j=1}^n n/ij" O(n^{2/3})
+		・!libuwi/utils/math/Sum.java
+	・popcountの和: "∑_{i=0}^n popcount(i)"
+		・!libuwi/utils/math/Sum.java
+	・累乗係数のpower seriesの収束先 "∑_{k=0}^\Infty k^i z^k"
+		・!libuwi/utils/math/Sum.java
+	・多項式係数のpower seriesの収束先 "∑_{k=0}^\Infty poly(k) z^k"
+		・#PolynomialCoefficientPowerSeries.cpp
+	・2次元でgcd(x,y)=1になる点の何かの和？
+		・よくわからない
+		・!libuwi/utils/math/Sum.java
+		・!libuwi/utils/math/SumRec2.java
+		・!libuwi/utils/math/SumRecO.java
+		・!libuwi/utils/math/SumRecP.java
+	・φ関数の和: "∑_{i=0}^n totient(i)"
+		・!libuwi/utils/math/Totient.java
+
+・nextXXXとランク,k番目
+	・nextPermutation
+		・C++ <algorithm>
+		・<https://sites.google.com/site/indy256/algo/permutations>
+		・!libuwi/utils/Permutation.java
+	・nextCombination
+		・ビット演算: !NextCombination.cpp
+		・<https://sites.google.com/site/indy256/algo/binomial_coefficients>
+		・ビット演算: <http://www.kmonos.net/repos/topcoder/artifact/291928c8067379300b85ee18deb0a67853a450b4>
+		・C++: <http://arc009.contest.atcoder.jp/submissions/51216>
+		・!libuwi/utils/Permutation.java
+	・nextArrangement
+		・<https://sites.google.com/site/indy256/algo/binomial_coefficients>
+	・permutation <-> 辞書順インデックス
+		・<https://sites.google.com/site/indy256/algo/permutations>
+		・!libuwi/utils/Permutation.java
+	・combination <-> 辞書順インデックス
+		・？
+	・arrangement <-> 辞書順インデックス
+		・!Arrangements.cpp
+		・!libuwi/utils/Permutation.java
+
+・その他数理
+	・二項係数
+		・!Combination.cpp
+			・mod素数〈O(p),O(log_p n)〉・mod素数〈O(r),O(r)〉・mod2・テーブルO(n^2)
+		・!libuwi/utils/math/Combination.java
+			・mod素数〈O(p),O(log_p n)〉・mod素数O(r log p)
+			・mod p^q O(p^q q log p)・mod p^q O(pq)
+			・一般O(r log r)
+			・C(x,2)・C(x,3)
+			・テーブルO(n^2)
+			・C(n,i)列挙O(r^2 log n)
+			・飽和
+	・拡張ユークリッドの互除法
+		・<http://www.prefield.com/algorithm/math/gcd.html>
+		・!GCD-LCM.cpp
+	・高速フーリエ変換(複素数上) O(n log n)
+		・!FFT.cpp
+		・!libuwi/utils/FFT2.java
+	・高速剰余変換 O(n log n)
+		・!FMT.cpp
+		・!libuwi/utils/FFTModulo.java
+	・高速xor変換 O(n log n)
+		・<http://www.kmonos.net/repos/topcoder/artifact/893844b7e5ed0726e2e8aec1bc99558deed882c4>
+	・Stern-Brocot木
+		・<http://www.kmonos.net/repos/topcoder/artifact/bfa0be1fa6ea3c75c678e1a1b27ac92f68d0a561>
+	・Nim-product
+		・!libuwi/utils/game/Game.java
+	・"(a+b√c)/d"
+		・!libuwi/utils/math/PolySolver.java
+	・"(a+b√c)^n"を整数で求める
+		・!libuwi/utils/math/Modulo.java
+	・ベルヌーイ数 O(n^2)
+		・!libuwi/utils/math/Sum.java
+	・ベルヌーイ数列挙 O(n^2)
+		・!libuwi/utils/math/Sum.java
+	・分割数 O(n√n)
+		・!libuwi/utils/DP.java
+	・スターリング数 O(n^2)
+		・!libuwi/utils/DP.java
+	・オイラー数 O(n^2)
+		・!libuwi/utils/DP.java
+
+・集合
+	・Set Cover
+		・<http://www.kmonos.net/repos/topcoder/artifact/3071774087420287802f9927d8945311f4356169>
+	・k-Cover O(2^n n)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・k-Partition O(2^n n^3)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・高速ゼータ変換・高速メビウス変換
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・<http://d.hatena.ne.jp/simezi_tan/20130522/1369203086>
+
+・無向グラフ
+	・Kruskal (最小全域木) O(E log E)
+		・#Kruskal.cpp
+	・Prim (最小全域木)
+		・!libuwi/utils/graph/SpanningTree.java
+			・隣接行列でO(V^2)
+	・Bron-Kerbosch algorithm O(3^(n/3)) = O(1.443^n)
+		・<http://en.wikipedia.org/wiki/Bron%E2%80%93Kerbosch_algorithm>
+		・maximal clique(クリーク)を全列挙する。
+		・maximal independent set(独立集合)にも同様に使える。
+		・計算量 = maximal cliqueの数 = O(3^(n/3))
+			・スパースな場合は"degeneracy"でも評価できるらしい(wikipediaより)
+		・独立集合: <https://sites.google.com/site/indy256/algo/bron_kerbosh>
+		・独立集合: !libuwi/utils/NP.java
+	・各部分集合での独立集合の個数 O(2^n) (×bitops)
+		・!libuwi/utils/NP.java
+		・#CountingSubIndependentSet.cpp
+	・各部分集合での大きさkの独立集合の個数 O(n 2^n) (×bitops)
+		・!libuwi/utils/NP.java
+	・k色で彩色できるか判定 O(2^n) (×bitops)
+		・!libuwi/utils/NP.java
+	・彩色数 O(2^n log n) (×bitops)
+		・!libuwi/utils/NP.java
+	・k彩色数え上げ O(2^n n^2 k)
+		・!libuwi/utils/NP.java
+	・最小支配集合
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+			・"40 頂点でも間に合う"
+		・!libuwi/utils/NP.java
+	・次数のリストがグラフとしてありえるかどうかの判定 O(N^2)
+		・<http://www.kmonos.net/repos/topcoder/artifact/5fae6e092a92d7c8ea4556f16ecf0b6ab070b0d0>
+	・k-単純閉路の数え上げ
+		・小さいkでの行列の公式: <https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・3-単純閉路の数え上げ: !libuwi/utils/graph/Cycle3.java
+	・関節点・橋・その分解 O(V + E)
+		・<http://www.prefield.com/algorithm/graph/articulation_point.html>
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Graph/Bridge.cpp>
+		・橋とbridge分解のみ: #Lowlink.cpp
+		・!libuwi/utils/graph/GraphSparse.java
+			・橋分解・関節点分解・橋列挙・関節点列挙
+	・Dreyfus-Wanger (最小シュタイナー木) O(3^t n + 2^t n^2 + n^3)
+		・<http://www.prefield.com/algorithm/dp/steiner_tree.html>
+	・無向オイラー路構築
+		・<http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%82%B0%E3%83%A9%E3%83%95%2F%E5%B7%A1%E5%9B%9E%E8%B7%AF%2F%E7%84%A1%E5%90%91%E3%82%AA%E3%82%A4%E3%83%A9%E3%83%BC%E8%B7%AF>
+		・!libuwi/utils/graph/GraphSparse.java
+	・グラフの同型性判定
+		・<http://www.prefield.com/algorithm/graph/isomorphism.html>
+	・最大重みマッチング
+		・!MaxWeightMatching.cpp
+	・彩色多項式
+		・#ChromaticPolynomial.cpp
+	・無向グラフの森判定と閉路検出
+		・!libuwi/utils/graph/GraphSparse.java
+	・頂点の次数が4以上のLine Graphからの復元
+		・!libuwi/utils/graph/GraphSparse.java
+
+・その他特殊な無向グラフ
+	・Chordal graph
+		・#ChordalGraph.cpp
+	・Cograph
+		・#Cograph.cpp
+
+・有向グラフ
+	・Dijkstra O(E log V)
+		・!Dijkstra.cpp
+		・!libuwi/utils/graph/Dijkstra.java
+		・!libuwi/utils/graph/Dijkstra2.java
+	・Dijkstra O(V^2)
+		・!libuwi/utils/graph/Dijkstra.java
+		・!libuwi/utils/graph/Dijkstra2.java
+	・小さな整数重みDijkstra O(E + D)
+		・!SmallWeightDijkstra.cpp
+		・D = 最短距離。単なるBFSやいわゆる0-1BFSもこれだと見れる
+	・Bellman-Ford O(VE)
+		・!BellmanFord.cpp
+		・!libuwi/utils/graph/GraphSparse.java
+	・Warshall-Floyd O(N^3)
+		・？
+	・SPFA
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Graph/SPFA.cpp>
+		・!MinimumCostFlow.cpp
+		・!libuwi/utils/graph/SPFA.java
+			・負閉路検出も
+	・k-最短路
+		・<http://en.wikipedia.org/wiki/K_shortest_path_routing>
+		・!implements/Eppstein/main.cpp
+			・O(E log V + k log k)
+		・Eppstein's でO(E + V log V + k)
+			・論文: <http://pdf.aminer.org/001/059/121/finding_the_k_shortest_paths.pdf>
+	・トポロジカルソート O(E)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・隣接行列ver.: !libuwi/utils/graph/GraphDense.java
+		・隣接リストver.: !libuwi/utils/graph/GraphSparse.java
+		・!TopologicalSort.cpp
+	・オンライントポロジカルソート(？)
+		・!libuwi/utils/graph/GraphDense.java
+	・Kahn's algorithm (辞書順最小トポロジカルソート) O(E)
+		・？
+	・強連結成分分解
+		・!StronglyConnectionComponents.cpp
+		・非再帰: <https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・Tarjan's: <http://shygypsy.com/tools/scc.cpp>
+		・隣接行列ver.: !libuwi/utils/graph/GraphDense.java
+		・隣接リストver.: !libuwi/utils/graph/GraphSparse.java
+		・強連結性判定: !libuwi/utils/graph/GraphSparse.java
+			・ある頂点をsとした時、元のグラフと転置グラフの両方でsから全ての頂点に到達できるのと同値
+	・有向オイラー路
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・平均最小閉路
+		・!MinimumMeanCycle.cpp
+	・Chu-Liu (最小有向全域木)
+		・!libuwi/utils/graph/SpanningTree.java
+			・O(V^3)
+
+
+・フロー・カット
+	・Ford-Fulkerson (最大流) O(E FLOW)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/graph/MaxFlow3.java
+	・Dinic (最大流) O(EV^2)
+		・参照: <http://topcoder.g.hatena.ne.jp/Mi_Sawa/20140311>
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/graph/MaxFlow2.java
+		・!libuwi/utils/graph/MaxFlow3.java
+		・!MaximumFlow.cpp
+	・最小カットの構成
+		・!MaximumFlow.cpp
+	・Primal Dual (最小費用流)
+		・!MinimumCostFlow.cpp
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Graph/MinCostFlow.cpp>
+		・<http://shygypsy.com/tools/mcmf4.cpp>
+		・!libuwi/utils/graph/MinCostFlow.java
+	・Stoer-Wagner (無向グラフの全域最小カット)
+		・O(V^3)たち
+			・<https://www.dropbox.com/s/xfvj6n5jhg5jso4/library.pdf>
+			・<http://www.prefield.com/algorithm/graph/minimum_cut.html>
+			・<http://www.kmonos.net/repos/topcoder/artifact/27b1f3ac721526bcf53951c370bf5b826f25f0f7>
+			・<http://shygypsy.com/tools/minCut.cpp>
+		・O(VE + V^2 log V)で可能。
+		・boost: <http://www.boost.org/doc/libs/1_46_1/libs/graph/doc/stoer_wagner_min_cut.html>
+	・Gomory-Hu 木 O(V MAXFLOW)
+		・全点対のs-t min-cutを求められる。
+		・<http://www.prefield.com/algorithm/graph/gomory_hu.html>
+		・<http://www.kmonos.net/repos/topcoder/artifact/08ac17a6157e8d09cf98835de13eeb57fe4bf28b>
+		・!libuwi/utils/graph/GomoryHuTree.java
+	・永持-茨木法 (全点対最小カット)
+		・隣接行列・O(V^3): !libuwi/utils/graph/GraphDense.java
+
+・2部グラフ
+	・2部グラフの最大マッチング O(V(V+E))
+		・!BipartiteMatching.cpp
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・!libuwi/utils/graph/Matching2.java
+			・Hopcroft-Karp'sでO(E√V)
+	・2部グラフの最大重みマッチング
+		・最小費用流で
+	・ハンガリアン法 O(n^3)
+		・<http://www.prefield.com/algorithm/math/hungarian.html>
+		・!libuwi/utils/graph/Matching.java
+			・左側のサイズをhとして O(h^2 n) も
+	・安定結婚問題
+		・!StableMatching.cpp
+		・<http://shygypsy.com/tools/stableMarriage.cpp>
+		・<http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%82%B0%E3%83%A9%E3%83%95%2F%E3%83%9E%E3%83%83%E3%83%81%E3%83%B3%E3%82%B0%2F%E5%AE%89%E5%AE%9A%E7%B5%90%E5%A9%9A>
+		・!libuwi/utils/graph/Matching.java
+	・2部グラフの最小点被覆
+		・構築: <https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・2部グラフの辺彩色
+		・彩色数 = 最大次数
+		・構築: <http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%82%B0%E3%83%A9%E3%83%95%2F%E3%81%9D%E3%81%AE%E4%BB%96%2F%E4%BA%8C%E9%83%A8%E3%82%B0%E3%83%A9%E3%83%95%E3%81%AE%E8%BE%BA%E5%BD%A9%E8%89%B2>
+
+・区間,区間グラフ
+	・区間グラフの最大独立集合 / 区間スケジューリング / 最小クリーク被覆 O(V log V)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・#Interval.cpp
+	・区間グラフの頂点彩色 O(V log V)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+		・#IntervalGraph.cpp
+		・彩色数だけ出したい時は、perfectなので最大クリークを求めれば…？
+	・区間グラフの最小支配集合 O(V log V)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・区間グラフの最大マッチング O(V log V)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・Marzullo's algorithm (区間グラフの最大クリーク) O(V log V)
+		・wikipedia: <http://en.wikipedia.org/wiki/Marzullo's_algorithm>
+	・区間の基本演算
+		・#Segment1D.cpp
+	・区間の併合
+		・？
+
+・DAG
+	・DAGの最小独立パス被覆
+		・<https://www.dropbox.com/s/xfvj6n5jhg5jso4/library.pdf>
+	・DAGの推移閉包からの復元
+		・!libuwi/utils/graph/GraphSparse.java
+
+・木
+	・Lowest Common Ancestor
+		・see: #静的データ構造
+	・Heavy-Light Decomposition, Euler Tour
+		・see: #一般的なテクニック
+	・Prufer code <-> 木
+		・Prufer code → 木: <https://sites.google.com/site/indy256/algo/random_tree>
+		・!libuwi/utils/graph/Tree.java
+	・木のcenter
+		・<https://sites.google.com/site/indy256/algo/tree_centers>
+	・木の重心
+		・!libuwi/utils/graph/Tree.java
+		・!libuwi/utils/graph/TreeW.java
+	・無向木での各頂点からの半径
+		・!libuwi/utils/graph/TreeW.java
+			・無向木上のDPのテンプレとしても？
+	・無向木の同型性
+		・<https://sites.google.com/site/indy256/algo_cpp/tree_isomorphism>
+			・centerを見つけてその左右の有向木が同型か判定する
+	・有向木の同型性
+		・<http://www.prefield.com/algorithm/graph/tree_isomorphism.html>
+	・無向木の高さ
+		・<http://www.prefield.com/algorithm/graph/tree_height.html>
+	・無向木の直径
+		・<http://www.prefield.com/algorithm/graph/tree_diameter.html>
+	・有向木の部分木のハッシュ
+		・!libuwi/utils/graph/Tree.java
+	・無向木のある頂点を根としたときの部分木のハッシュ
+		・!libuwi/utils/graph/Tree.java
+	・preorderとpostorderからの有向木の復元
+		・!libuwi/utils/graph/Tree.java
+
+・Functional Graph
+	・functional graphのサイクル列挙
+		・!libuwi/utils/graph/FunctionalGraph.java
+	・functional graphをサイクルと有向木にうまく分解する
+		・#FunctionalGraph.cpp
+	・Brent's algorithm (functional graphのある頂点からの閉路検出) メモリO(1) words
+		・!libuwi/utils/graph/FunctionalGraph.java
+			・閉路が含まれているかの判定(全ての頂点からの閉路を考える)はうまくいかない(N^2とかになる)ので注意！！
+		・#DetectCycle.cpp
+	・functional graphのダブリング
+		・!libuwi/utils/graph/FunctionalGraph.java
+	・出次数も入次数も1以下のグラフをパスとサイクルに分解する
+		・#DecomposeDegOneOneGraph.cpp
+
+・平面幾何(直線,線分)
+	・2点を通る直線の方程式
+		・!libuwi/utils/Geo.java
+	・ccw
+		・整数: !IntegerGeometry.cpp
+	・{直線,線分,点}ペアの交差判定・交点・距離
+		・判定: <https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/Intersect.cpp>
+		・交差点: <https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/CrossPoint.cpp>
+		・距離: <https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/Distance.cpp>
+		・整数 交差判定: !IntegerGeometry.cpp
+		・!libuwi/utils/Geo.java
+		・!libuwi/utils/GeoL.java
+	・2つの点の二等分線
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/ThreePointCircle.cpp>
+	・垂線
+		・!libuwi/utils/Geo.java
+	・点の対称移動
+		・!libuwi/utils/Geo.java
+	・線分アレンジメント
+		・<https://www.dropbox.com/s/xfvj6n5jhg5jso4/library.pdf>
+			・O(N^3)
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/Arrangement.cpp>
+			・O(N^3)
+		・!libuwi/utils/Geo.java
+		・!libuwi/utils/GeoL.java
+			・O(N^2 log N)?
+	・線分併合
+		・!libuwi/utils/GeoL.java
+	・直線アレンジメント走査
+		・<http://www.prefield.com/algorithm/geometry/walk_arrangement.html>
+			・O(n^2 log n)
+	・折れ線の最大値
+		・!libuwi/utils/Geo.java
+		・!libuwi/utils/GeoL.java
+	・線分集合の交点の列挙
+		・!libuwi/utils/LineSweep2.java
+		・数え上げ: !libuwi/utils/LineSweep.java
+
+・平面幾何(円)
+	・3点を通る円
+		・<http://www.prefield.com/algorithm/geometry/misc.html>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/ThreePointCircle.cpp>
+	・円と直線の交点
+		・<https://sites.google.com/site/indy256/algo/geometry_circle>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/CrossPoint.cpp>
+		・!libuwi/utils/GeoCircle.java
+	・円と線分との交差判定
+		・!libuwi/utils/GeoCircle.java
+	・円と線分との交点
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/CrossPoint.cpp>
+		・!libuwi/utils/GeoCircle.java
+	・円と円との交点
+		・<http://www.prefield.com/algorithm/geometry/misc.html>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/CrossPoint.cpp>
+		・!libuwi/utils/GeoCircle.java
+	・円と円との共通部分の面積
+		・<https://sites.google.com/site/indy256/algo/geometry_circle>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/CircleCircleArea.cpp>
+		・!libuwi/utils/Geo.java
+	・円と多角形の共通部分の面積
+		・!libuwi/utils/GeoCircle.java
+	・円と点の接線
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/CircleTangent.cpp>
+	・2つの円の共通する接線
+		・<http://acm-icpc.aitea.net/index.php?plugin=attach&pcmd=open&file=25p_lib%28final%20master%29.pdf&refer=2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+		・!libuwi/utils/GeoCircle.java
+	・最多の点を含む半径rの円
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/MaxPointCircle.cpp>
+	・アポロニウスの円
+		・!libuwi/utils/GeoCircle.java
+	・三角形の外接円
+		・!libuwi/utils/GeoCircle.java
+			・3Dのものも
+	・三角形の内接円
+		・!libuwi/utils/GeoCircle.java
+	・楕円の周長
+		・!libuwi/utils/GeoCircle.java
+
+
+・平面幾何(多角形)
+	・面積・符号付き面積
+		・整数: !IntegerGeometry.cpp
+	・多角形と点との包含判定
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/Intersect.cpp>
+		・<http://www.prefield.com/algorithm/geometry/contains.html>
+		・!libuwi/utils/Geo.java
+			・重心を求めてソートしておけばO(log N)のものも
+	・多角形の三角形分割(耳分解)
+		・!libuwi/utils/Geo.java
+	・多角形の幾何的重心
+		・<http://acm-icpc.aitea.net/index.php?plugin=attach&pcmd=open&file=claxlib.pdf&refer=2005%2FPractice%2F%C5%DF%B9%E7%BD%C9%2FDiscussion%2F%A5%E9%A5%A4%A5%D6%A5%E9%A5%EA>
+	・多角形の冗長性削除 O(n)
+		・!libuwi/utils/Geo.java
+	・多角形の合同判定 O(n^2)
+		・!libuwi/utils/Geo.java
+	・多角形の相似判定
+		・!libuwi/utils/Geo.java
+	・多角形の重心
+		・!libuwi/utils/Geo.java
+	・多角形が時計回りかの判定
+		・!libuwi/utils/GeoL.java
+	・多角形内の格子点の数
+		・!libuwi/utils/GeoL.java
+
+・平面幾何(凸多角形)
+	・凸包 O(n log n)
+		・点の数が0個の場合のコーナーケースに注意！(少なくともすぱそ実装ではREしてしまう)
+		・整数: !IntegerGeometry.cpp
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/ConvexHull.cpp>
+		・!libuwi/utils/Geo.java
+	・凸多角形のソート
+		・!libuwi/utils/Geo.java
+	・凸多角形の直線での切断 O(n)
+		・<http://www.prefield.com/algorithm/geometry/convex_cut.html>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Geometry/ConvexCut.cpp>
+		・!libuwi/utils/Geo.java
+	・凸多角形の共通部分 O(n + m)
+		・<http://www.prefield.com/algorithm/geometry/convex_intersect.html>
+	・凸多角形と点の包含判定 O(n)
+		・<http://www.prefield.com/algorithm/geometry/convex_contains.html>
+		・<http://www.kmonos.net/repos/topcoder/artifact/f28d7402b7cb45295c7d9e9e95e0544528580e75>
+		・整数: !IntegerGeometry.cpp
+	・凸多角形と線分の包含関係
+		・<http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E5%B9%BE%E4%BD%95%2F%E4%BA%A4%E5%B7%AE%2F%E5%87%B8%E5%A4%9A%E8%A7%92%E5%BD%A2%E3%81%A8%E7%B7%9A%E5%88%86%E3%81%AE%E5%8C%85%E5%90%AB%E5%88%A4%E5%AE%9A>
+	・凸多角形上の最遠点対
+		・一般の点集合ではまず凸包を取れば良い。
+		・<http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E5%B9%BE%E4%BD%95%2F%E8%B7%9D%E9%9B%A2%2F%E6%9C%80%E9%81%A0%E7%82%B9%E5%AF%BE>
+
+・平面幾何(その他)
+	・ドローネ三角形分割とボロノイ図
+		・<https://sites.google.com/site/indy256/algo/delaunay_voronoi>
+			・ただしΘ(n √n) (最速はΘ(n log n))
+	・geoemetric median
+		・!libuwi/utils/Geo.java
+	・平面グラフの面の走査
+		・!libuwi/utils/Geo.java
+	・平面グラフの極小面の列挙
+		・!libuwi/utils/Geo.java
+	・平面グラフの双対グラフ
+		・!libuwi/utils/Geo.java
+	・アフィン変換の行列
+		・!libuwi/utils/Geo.java
+	・2次元最近点対
+		・!libuwi/utils/GeoL.java
+	・軸に平行な長方形の集合のunionの面積
+		・!libuwi/utils/Union.java
+	・Ham-sandwich problem
+		・？
+
+・空間幾何
+	・四面体の面積
+		・!libuwi/utils/Geo.java
+
+・多次元幾何
+	・基本演算
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/3DGeometry/Base.cpp>
+	・線分と点の交差判定
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/3DGeometry/Base.cpp>
+	・線分と点の距離
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/3DGeometry/Base.cpp>
+	・直線と直線の角度
+		・？
+	・最小包含球 O(2^d n)
+		・<http://www.prefield.com/algorithm/geometry3D/min_ball.html>
+		・!libuwi/utils/Geo.java
+	・乱択最近点対 期待O(n) (dは定数とする)
+		・!ClosestPair.cpp
+	・最遠点対
+		・!libuwi/utils/Geo.java
+
+・文字列・数値列
+	・Knuth-Morris-Pratt
+		・!KMP.cpp
+	・Boyer-Moore
+		・<http://www.prefield.com/algorithm/string/boyer_moore.html>
+	・Aho-Corasick
+		・!AhoCorasick.cpp
+		・!libuwi/utils/structure/Trie3.java
+	・Z-Algorithm O(n)
+		・#ZAlgorithm.cpp
+	・最長増加部分列 LIS O(n log n)
+		・!LongestIncreaseSequence.cpp
+		・<http://www.prefield.com/algorithm/dp/lis_fast.html>
+			・構築も
+		・<http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%81%9D%E3%81%AE%E4%BB%96%2F%E5%88%97%2F%E6%9C%80%E9%95%B7%E5%A2%97%E5%8A%A0%E9%83%A8%E5%88%86%E5%88%97>
+	・最長共通部分列 O((n + r) log n) where r = |{ (i,j) | A[i] = B[j] }|
+		・<http://www.prefield.com/algorithm/dp/lcs_hs.html>
+	・CIPR (最長共通部分列) O(mn/w)
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+	・編集距離 O(nm)
+		・<https://github.com/delta2323/algorithm_library/blob/master/src/edit_distance.cpp>
+	・Manacher's algorithm (回分半径) O(n)
+		・!implements/Manacher/main.cpp
+	・文字列の二乗判定 O(n log n)
+		・<http://www.prefield.com/algorithm/string/square.html>
+	・maximal repeat
+		・!implements/Ukkonen/main.cpp
+	・Burrows-Wheeler transform (ブロックソート)
+		・!libuwi/utils/Enc.java
+			・encode/decode
+	・Rolling Hash
+		・？
+
+・Suffix Tree / Suffix Array
+	・Ukkonen's algorithm (Suffix Tree) O(n∑)
+		・!implements/Ukkonen/main.cpp
+		・!libuwi/utils/structure/SuffixTree5.java
+	・SA-IS (Suffix Array) O(n)
+		・!implements/SuffixArray/SA_IS.hpp
+	・KLAAP algorithm (高さ配列) O(n)
+		・!implements/SuffixArray/KLAAP.hpp
+		・!libuwi/utils/structure/SuffixArray.java
+	・各位置に対して左側との最長共通接頭辞
+		・!libuwi/utils/structure/SuffixArray.java
+	・部分回文列挙
+		・!SubPalindrome.cpp
+		・!libuwi/utils/structure/SuffixArray.java
+	・Suffix automaton (DAWG)
+		・<https://sites.google.com/site/indy256/algo/suffix_automaton>
+		・!libuwi/utils/structure/SuffixAutomaton.java
+
+・動的データ構造(STLにある)
+	・双方向リスト
+	・deque
+	・queue
+		・使い捨て: !libuwi/utils/structure/Q.java
+	・priority_queue
+	・ハッシュセット・ハッシュマップ
+
+・動的データ構造(平衡探索木など)
+	・Fenwick Tree (BIT)
+		・1次元/多次元: !FenwickTree.cpp
+	・Segment Tree
+		・!SegmentTree.cpp
+		・RMQ: !RangeMinimumQuery.cpp
+		・LCA: !RangeLCA.cpp
+		・Rolling Hash: !libuwi/utils/structure/segtree/SegmentTreeRSQHash.java
+		・線形加算: !libuwi/utils/structure/segtree/SegmentTreeRWSQ.java
+		・flip/count: !libuwi/utils/structure/segtree/SegmentTreeRXQ.java
+		・点更新・範囲le/geカウント: !libuwi/utils/structure/segtree/SegmentTreeSeqGE.java
+	・Treap
+		・!Treap.cpp
+		・mapの操作: !implements/Util/TreapMap.hpp
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Structure/Treap.cpp>
+		・!libuwi/utils/structure/Treap.java
+		・!libuwi/utils/structure/TreapInt.java
+	・RBST (明示的にpriorityを持たず、操作のたびに乱数を生成する)
+		・#RBST.cpp
+		・#PRBST.cpp
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Structure/RBST.cpp>
+	・交差しない区間を管理する平衡木
+			・!libuwi/utils/structure/IntervalTreap.java
+	・AVL木
+		・<http://shygypsy.com/tools/bst.cpp>
+	・赤黒木
+		・#RedBlackTree.cpp
+			・insert,erase,mergeを実装。splitは未実装。各ノードがサイズを持つ位置ベースのもの(rather than multiset・sorted list)
+	・B-tree
+		・？
+	・永続的平衡2分探索木
+		・#PersistentBinarySearchTree.cpp
+	・Fixed Universe Structures
+		・setの操作: !implements/Util/IntegralTrie.hpp
+	・Van Emde Boas tree (vEB tree)
+		・？
+		・<http://codeforces.com/contest/400/submission/5945790>
+	・Link-cut Tree
+		・!LinkCutTree.cpp
+		・dynamic connectivity: <https://sites.google.com/site/indy256/algo/link-cut-tree>
+		・dynamic LCA: <https://sites.google.com/site/indy256/algo/link-cut-tree-lca>
+	・Euler-tour Tree
+		・!EulerTourLCA.cpp
+		・#SignedEulerTourTree.cpp
+			・パスクエリも群なら可能なのでは？という試み
+	・Skip List
+		・!libuwi/utils/structure/SkipList.java
+
+
+・動的データ構造(クエリ系)
+	・Union Find
+		・!UnionFind.cpp
+	・kd木
+		・<https://sites.google.com/site/indy256/algo/kdtree>
+			・ランダムな入力に対して最近点クエリO(log n)
+		・<https://sites.google.com/site/indy256/algo/kdtree_rect>
+			・2次元。区間クエリO(√N) (ランダムな入力に対して？)
+		・<http://www.prefield.com/algorithm/geometry/kdtree.html>
+		・!libuwi/utils/structure/KDNode.java
+		・フラクショナルカスケーディング？
+	・区分木
+		・<http://www.prefield.com/algorithm/container/interval_tree.html>
+	・BK-tree
+		・ある要素からある距離以内にある要素を列挙できるらしい
+		・<http://shygypsy.com/tools/BkTree.cpp>
+	・4分木
+		・!libuwi/utils/structure/QuadTree.java
+	・2^t分木
+		・!libuwi/utils/structure/QuadTree3.java
+
+・動的データ構造(その他)
+	・Trie
+		・#Trie.cpp
+		・!libuwi/utils/structure/TrieDeletable.java
+		・!libuwi/utils/structure/TrieNew2.java
+	・Meldable heap
+		・<https://sites.google.com/site/indy256/algo/mergeable_heap>
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Structure/SkewHeap.cpp>
+		・!libuwi/utils/structure/LeftistHeap.java
+	・削除・更新のできる2分ヒープ
+		・!BinaryHeap.cpp
+		・!libuwi/utils/structure/MinHeap.java
+	・Double-ended priority queue
+		・!IntervalHeap.cpp
+	・キュー with minimum
+		・スライド最小値に用いることができる
+		・<https://sites.google.com/site/indy256/algo/queue_min>
+		・間違ってるっぽい？: #SlideMinimum.cpp
+	・Dancing Links
+		・wikipedia: <http://en.wikipedia.org/wiki/Dancing_Links>
+		・<http://shygypsy.com/tools/dlinks.cpp>
+
+・静的データ構造
+	・Lowest Common Ancestor〈O(n),O(1)〉
+		・!LCA.cpp
+		・!implements/Ukkonen/SchieberVishkinLCA.cpp
+		・!implements/Ukkonen/EulerTourLCA.cpp
+	・Range Minimum Query〈O(n),O(1)〉
+		・!implements/RangeMinimumQuery/DirectRMQ.hpp
+		・!implements/RangeMinimumQuery/main.cpp
+	・最大和の部分文字列クエリ〈O(n),O(1)〉
+		・!implements/RangeMaximumSumSegmentQuery/RMSQ.cpp
+	・ウェーブレット行列
+		・#WaveletMatrix.cpp
+	・ウェーブレット木
+		・#WaveletTree.cpp
+
+・パース
+	・パース雑多
+		不完全: #RecursiveDecentParsing.cpp
+	・Shunting-yard algorithm
+		・演算子に優先順位・accociativityがある式をパースする
+		・<https://sites.google.com/site/indy256/algo/expression_parser>
+	・カレンダーのパース
+		・!ParseCalendar.cpp
+	・四則演算のパース
+		・!libuwi/utils/parser/Parser4.java
+		・!libuwi/utils/parser/Parser6NoRec.java
+	・二分木のパース
+		・!libuwi/utils/parser/ParserBinaryTree.java
+	・正規表現のパース
+		・!libuwi/utils/parser/ParserRegExp.java
+		・!libuwi/utils/parser/ParserRegExp2.java
+	・線形計画問題のパース
+		・!libuwi/utils/LPParser.java
+
+・一般的なテクニック
+	・バケット法(平方分割)
+		・!libuwi/utils/structure/SqrtDec.java
+	・クエリの直線走査
+		・Sum: !TwoDimensionalSumQuery.cpp
+	・区間クエリの平方分割
+		・!SqrtSort.cpp
+		・<https://sites.google.com/site/indy256/algo/universal_sqrt_decomposition>
+		・!libuwi/utils/Sort.java
+	・Heavy-Light Decomposition
+		・!libuwi/utils/graph/Tree.java
+	・Centroid Path Decomposition
+		・!CentroidPathDecomposition.cpp
+	・Euler Tour
+		・!TreeTraversal.cpp
+		・!libuwi/utils/graph/Tree.java
+			・頂点属性ver.・辺属性ver.
+	・木のSeparator Decomposition
+		・!libuwi/utils/graph/TreeW.java
+	・2次元尺取法
+		・!libuwi/utils/math/Sum.java
+	・連結性制約のbitDP用ユーティリティ
+		・!libuwi/utils/BitConnectDP.java
+	・焼きなまし法
+		・#SimulatedAnnealing.cpp
+
+・その他(問題)
+	・高さの配列が与えられて最大面積の矩形
+		・スタックを用いたアルゴリズム
+		・<https://sites.google.com/site/indy256/algo/max_rectangle>
+		・!libuwi/utils/Sequence.java
+	・対和からの復元
+		・<http://shygypsy.com/tools/pairsums.cpp>
+		・足し算以外の関数も考えた論文: <http://i.cs.hku.hk/~zhiyi/publications/CHK09-ISAAC.pdf>
+		・<http://www.prefield.com/algorithm/misc/pairsum.html>
+	・半順序集合の最小鎖分割
+		・<http://www.prefield.com/algorithm/misc/minimum_chains.html>
+	・2-SAT
+		・#TwoSatisfiability.cpp
+	・"((A)3(AB)2)2"のような文字列の繰り返しの式のk文字目
+		・!libuwi/utils/parser/ParseRep.java
+		・!libuwi/utils/parser/ParseRepNoRec.java
+	・正規表現からDFAを構築
+		・!libuwi/utils/parser/ParserRegExp.java
+	・両替問題でgreedyが最適解を出せるかの判定と最適でない判例の構築
+		・!libuwi/utils/GreedyChange.java
+
+
+・その他(パズル問題)
+	・ライツアウト
+		・!libuwi/utils/game/Game.java
+			・十字型, O(n 2^m)
+	・Josephus problem
+		・!libuwi/utils/game/Game.java
+			・最後が誰, 誰かが何番目
+	・ハノイの塔
+		・!libuwi/utils/game/Hanoi.java
+			・最短手でのk回目の移動・移動後の状態
+			・一般化ハノイの塔問題 O(N^2 P) (Monge DP)
+
+・その他(非問題)
+	・マトロイド交差
+		・<http://nya3.jp/libicpc/?%E3%83%A9%E3%82%A4%E3%83%96%E3%83%A9%E3%83%AA%2F%E3%81%9D%E3%81%AE%E4%BB%96%2F%E7%B5%84%E3%81%BF%E5%90%88%E3%82%8F%E3%81%9B%E6%9C%80%E9%81%A9%E5%8C%96%2F%E3%83%9E%E3%83%88%E3%83%AD%E3%82%A4%E3%83%89%E4%BA%A4%E5%B7%AE>
+	・さいころ
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Structure/Dice.cpp>
+		・!libuwi/utils/Dice.java
+	・区間演算
+		・？
+	・飽和演算
+		・不完全: #SaturationInt.cpp
+	・六角形の座標
+		・座標系の変換: <http://www.prefield.com/algorithm/misc/honeycomb.html>
+		・近傍: !HexMap.cpp
+	・累積和・階差
+		・2次元: #RectangeSum.cpp
+		・#VisualizeCumsumDiffs.cpp
+			・インタラクティブに見ることができる
+	・動的multisetのハッシュ
+		・!MultisetHash.cpp
+	・ハフマン符号
+		・!libuwi/utils/Huffman.java
+	・log-add-exp, log-sum-exp
+		・!LogDomain.cpp
+		・<http://d.hatena.ne.jp/echizen_tm/20100629/1277813284>
+		・？
+	・区間のand,or演算
+		・!libuwi/utils/structure/Range.java
+			・sorted区間集合a,bのandをO(|a|+|b|)
+	・Redelmeier (ポリオミノの列挙)
+		・!libuwi/utils/Redelmeier.java
+	・Quick Select
+		・C++ <algorithm>
+		・？
+	・Random Shuffle
+		・C++ <algorithm>
+		・？
+
+・その他(現実のもの)
+	・Fairfieldの公式
+		・西暦1年1月0日からの経過日数を求める。0 (mod 7)のとき日曜日
+		・<https://www.dropbox.com/s/xfvj6n5jhg5jso4/library.pdf>
+	・日付
+		・!Date.cpp
+	・ローマ数字
+		・<http://shygypsy.com/tools/library.cpp>
+		・!libuwi/utils/Consts.java
+	・モールス信号
+		・A～Zのみ: !libuwi/utils/Consts.java
+	・英語の序数
+		・!libuwi/utils/Consts.java
+	・デジタル数字(7-seg display)
+		・!libuwi/utils/Consts.java
+	・ポーカー役判定
+		・ルールが色々あるので注意
+		・<http://www.prefield.com/algorithm/misc/poker.html>
+		・!libuwi/utils/game/Poker.java
+	・multitap (携帯用のキー配列)
+		・!MultitapKeys.cpp
+	・リバーシ (オセロ)
+		・#Reversi.cpp
+
+・その他(小さなもの)
+	・2次元配列の回転
+		・!ArrayRotation.cpp
+		・!libuwi/utils/Rotate.java
+	・dy,dx
+		・!DyDx.cpp
+	・ナイトの動き
+		・!Knight_dxdy.cpp
+	・ユニークなID
+		・!GetID.cpp
+	・木上のDP状態の番号付け
+		・!TreeTraversal.cpp
+	・勝つなら最短・負けるなら最長手数のゲームのDPの遷移
+		・!libuwi/utils/game/Game.java
+	・(x,y) where x≦y / x＜y のインデックス
+		・!libuwi/utils/Hash.java
+
+・実装上のもの
+	・fast I/O
+		・Input: <https://sites.google.com/site/indy256/algo_cpp/scanner>
+	・静的有向グラフをコンパクトに持つ
+		・!implements/Util/StaticGraph.hpp
+	・静的無向グラフをコンパクトに持つ
+		・？
+	・動的有向グラフをコンパクトに持つ
+		・？
+	・動的無向グラフをコンパクトに持つ
+		・？
+	・有向木をコンパクトに持つ
+		・？
+	・正しいmod演算
+		・!CorrectMinusModulo.cpp
+	・整数割り算のfloor,ceil
+		・!FloorDiv.cpp
+		・!implements/Util/ProperIntegerDivisionFloorAndCeiling.hpp
+	・bit hacks
+		・#BitHacks.cpp
+			・popcount, trailing zeros O(log log n), select32
+		・!libuwi/utils/Bit.java
+	・inline asm
+		・#FasterLLDivMod.cpp
+			・div命令。商が32bitでオーバーフローしないことがわかってるならlong long/intを高速にできる
+
+・ユーティリティ
+	・XorShift
+		・!XorShift128.cpp
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Utility/XorShift.cpp>
+		・!libuwi/utils/RNG.java
+	・ランダム有向木
+		・!implements/Util/RandomRootedTree.hpp
+	・ランダムグラフ
+		・<https://sites.google.com/site/indy256/algo/random_tree>
+	・ランダムケース生成
+		・<https://github.com/cos65535/ICPCLibrary/blob/master/Tool/RandomValue.cpp>
+		・#GreedyRandomTester.cpp
+	・色々なグラフ生成
+		・!libuwi/utils/test/GraphGenerator.java
+	・時間計測
+		・windows: !implements/Util/TimeIt_Simple.hpp
+	・メモリ計測
+		・windows: !implements/Util/GetCurrentHeapSize.hpp
+	・タイムリミット判定
+		・unix: <https://github.com/cos65535/ICPCLibrary/blob/master/Utility/TimeLimit.cpp>
+	・ビジュアライズ
+		・色の生成: #VisualizeColors.cpp
+		・グラフ: #DebugVisualizeGraph.cpp
+		・グラフ,JFlame: !libuwi/utils/graph/GraphUtils.java
+	・文字列のハッシュの衝突攻撃
+		・!libuwi/utils/test/AntiHashMap2.java
+			・javaのHashSetやHashMapに使えるらしい
+	・巨大な数列の一部の埋め込み補助
+		・#Umekomi.cpp
+
+・性質・定理・公式(数理)
+	・誕生日のパラドックス
+	・Mobius の反転公式
+	・Polya の定理
+	・Bertrandの仮説
+	・Wilsonの定理
+	・フェルマーの定理
+	・級数の和
+	・3次方程式の解
+	・三角法
+	・積分法
+	・数値積分 composite Simpson's rule
+
+・性質・定理・公式(グラフ)
+	・グラフのパス被覆とか
+		・<https://dl.dropboxusercontent.com/u/12474064/library_todo.pdf>
+
+・性質・定理・公式(幾何)
+	・Ptolemyの定理
+	・五心の公式
+	・Pickの定理
+	・整数座標の凸多角形の頂点数の上限
+
+・性質・定理・公式(その他)
+	・Grundy数
+		・#GrundyNumber.cpp
+
+・チートシート
+	・計算量
+		・n以下の約数の個数の最大値
+		・n以下の素数の個数
+		・nの分割数
+	・床関数・天井関数と不等式とlower_bound系関数
+		・#InequalityCheatSheet.cpp
+

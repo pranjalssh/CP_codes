@@ -1,5 +1,5 @@
 struct BridgeTree {
-  vvi g;
+  vector<vi> g;
   int n, ctr;
   vi num, in, low, root;
   stack <int> bc;
@@ -18,17 +18,17 @@ struct BridgeTree {
     }
   }
   BridgeTree() {}
-  BridgeTree(vvi& g) : g(g), n(g.size()), ctr(0), num(n, -1), in(n), low(n), root(n) {
-    dfs(0, -1);
+  BridgeTree(vector<vi>& g) : g(g), n(g.size()), ctr(0), num(n, -1), in(n), low(n), root(n) {
+    FOR (i, 0, n - 1) if (num[i] == -1) dfs(i, -1);
   }
-  vvi getTree() {
-    vvi t(n);
+  vector<vi> getTree() {
+    vector<vi> t(n);
     FOR(i, 0, n - 1) {
       for (int j : g[i]) {
         if (i > j)continue;
         if (root[i] != root[j])
-          t[root[i]].pb(root[j]),
-          t[root[j]].pb(root[i]);
+          t[root[i]].push_back(root[j]),
+          t[root[j]].push_back(root[i]);
       }
     }
     return t;

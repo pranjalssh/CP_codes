@@ -8,7 +8,7 @@
 using namespace std;
 
 double INF = 1e100;
-double EPS = 1e-12;
+double EPS = 1e-7;
 
 struct PT { 
   double x, y; 
@@ -27,9 +27,13 @@ double dot(PT p, PT q)     { return p.x*q.x+p.y*q.y; }
 double dist2(PT p, PT q)   { return dot(p-q,p-q); }
 double cross(PT p, PT q)   { return p.x*q.y-p.y*q.x; }
 ostream &operator<<(ostream &os, const PT &p) {
-  os << "(" << p.x << "," << p.y << ")"; 
+  return os << "(" << p.x << "," << p.y << ")"; 
 }
-T area2(PT a, PT b, PT c) { return cross(a,b) + cross(b,c) + cross(c,a); }
+double area2(PT a, PT b, PT c) { return cross(a,b) + cross(b,c) + cross(c,a); }
+
+
+
+
 
 #ifdef REMOVE_REDUNDANT
 bool between(const PT &a, const PT &b, const PT &c) {

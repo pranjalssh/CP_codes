@@ -19,7 +19,7 @@ struct PushRelabel {
 
   PushRelabel(int N) : N(N), G(N), excess(N), dist(N), active(N), count(2*N) {}
 
-  void AddEdge(int from, int to, int cap) {
+  void addEdge(int from, int to, int cap) {
     G[from].push_back(Edge(from, to, cap, 0, G[to].size()));
     if (from == to) G[from].back().index++;
     G[to].push_back(Edge(to, from, 0, 0, G[from].size() - 1));
@@ -52,7 +52,7 @@ struct PushRelabel {
   void Relabel(int v) {
     count[dist[v]]--;
     dist[v] = 2*N;
-    for (int i = 0; i < G[v].size(); i++) 
+    for (int i = 0; i < (int)G[v].size(); i++) 
       if (G[v][i].cap - G[v][i].flow > 0)
 	dist[v] = min(dist[v], dist[G[v][i].to] + 1);
     count[dist[v]]++;
@@ -60,7 +60,7 @@ struct PushRelabel {
   }
 
   void Discharge(int v) {
-    for (int i = 0; excess[v] > 0 && i < G[v].size(); i++) Push(G[v][i]);
+    for (int i = 0; excess[v] > 0 && i < (int)G[v].size(); i++) Push(G[v][i]);
     if (excess[v] > 0) {
       if (count[dist[v]] == 1) 
 	Gap(dist[v]); 
@@ -69,12 +69,12 @@ struct PushRelabel {
     }
   }
 
-  LL GetMaxFlow(int s, int t) {
+  LL maxFlow(int s, int t) {
     count[0] = N-1;
     count[N] = 1;
     dist[s] = N;
     active[s] = active[t] = true;
-    for (int i = 0; i < G[s].size(); i++) {
+    for (int i = 0; i < (int)G[s].size(); i++) {
       excess[s] += G[s][i].cap;
       Push(G[s][i]);
     }
@@ -87,7 +87,7 @@ struct PushRelabel {
     }
     
     LL totflow = 0;
-    for (int i = 0; i < G[s].size(); i++) totflow += G[s][i].flow;
+    for (int i = 0; i < (int)G[s].size(); i++) totflow += G[s][i].flow;
     return totflow;
   }
 };

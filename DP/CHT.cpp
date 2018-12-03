@@ -60,172 +60,36 @@ pair<T, int> query_offline(T x) {
   }
 */
 
-
-class DynamicConvexHull {
-private:
-    
-    struct Point {
-        
-        /*
-         Defines the progression of the form x * param + y
-         */
-        
-        long long x;
-        long long y;
-        bool is_query_point;
-        mutable set<Point>::iterator par;
-        set<Point> *master; // the set, containing this point
-        
-        Point () { }
-        Point (long long x, long long y, bool is_query_point, set<Point> *master) : x(x), y(y), is_query_point(is_query_point), master(master) { }
-        inline bool operator < (const Point &you) const {
-            
-            /*
-             There are two possible situations:
-             - We're adding a point to the convex hull;
-             - We're looking for the optimal possible value of x * param + b for some param = x;
-             
-             In the first case, we will act just like we sort the points in Graham's algo.
-             */
-            
-            if (!is_query_point && !you.is_query_point)
-                return (x > you.x);
-            
-            /*
-             In the second case, we will use the fact that first, the progressions value will decrease, and after some point will start to increase again.
-             */
-            
-            if (is_query_point) {
-                /*
-                 In this case, my object is a query with param = x.
-                 */
-                if (you.par == master->end())
-                    return false;
-                if (you.par->x < you.x)
-                    return ((you.y - you.par->y) <= x * (you.par->x - you.x));
-                else
-                    return ((you.y - you.par->y) >= x * (you.par->x - you.x));
-            } else {
-                /*
-                 This is the previous case, vice-versa.
-                 */
-                if (par == master->end())
-                    return true;
-                if (par->x < x)
-                    return (y - par->y) > you.x * (par->x - x);
-                else
-                    return (y - par->y) < you.x * (par->x - x);
-            }
-        }
-    } ;
-    
-    typedef set<Point>::iterator position;
-    
-    set<Point> hull;
-    
-    /*
-     The following routine removes the point, denoted by the iterator from the hull.
-     */
-    
-    inline void remove_point (position me) {
-        /*
-         We only need to ensure that the next point has a correct predecessor pointer.
-         */
-        position next = me;
-        ++next;
-        if (next != hull.end())
-            next->par = me->par;
-        hull.erase(me);
-    }
-    
-    inline bool is_bad_turn (position center) {
-        position next = center, prev = center;
-        ++next;
-        if (center == hull.begin() || next == hull.end())
-            return false;
-        --prev;
-        Point a = *prev, b = *center, c = *next;
-        
-        bool check_type = false;
-        if (b.x < a.x)
-            check_type ^= true;
-        if (b.x < c.x)
-            check_type ^= true;
-        
-        if (check_type)
-            return (c.y - b.y+bc) * (b.x - a.x) - (a.y - b.y+bc) * (b.x - c.x) >=-1e-18;
-        else
-            return (c.y - b.y+bc) * (b.x - a.x) - (a.y - b.y+bc) * (b.x - c.x) <= 1e-18;
-    }
-    
-public:
-    
-    inline void add_progression (long long x, long long y) {
-        Point me(x, y, false, &hull);
-        position pos = hull.find(me);
-        if (pos != hull.end() && pos->y >= y)
-            return ;
-        if (pos != hull.end())
-            remove_point(pos);
-        hull.insert(me);
-        
-        /* Recalculate the pointer to the previous point for the next point.*/
-        
-        pos = hull.find(me);
-        position next = pos;
-        ++next;
-        if (next != hull.end())
-            next->par = pos;
-        
-        /* Calculate the pointer to the previous point for the current point.*/
-        
-        if (pos != hull.begin()) {
-            position prev = pos;
-            --prev;
-            pos->par = prev;
-        } else pos->par = hull.end();
-        
-        /*
-         If the point is lying above the current hull, we can safely get rid of it.
-         */
-        
-        if (is_bad_turn(pos)) {
-            remove_point(pos);
-            return ;
-        }
-        
-        /*
-         Delete the points that became unnecessary and lay after the current one.
-         */
-        
-        while (next != hull.end() && is_bad_turn(next)) {
-            remove_point(next);
-            next = pos;
-            ++next;
-        }
-        
-        /*
-         Delete the points that became unnecessary and lay before the current one.
-         */
-        
-        if (pos != hull.begin()) {
-            position prev = pos;
-            --prev;
-            while (pos != hull.begin() && is_bad_turn(prev)) {
-                remove_point(prev);
-                prev = pos;
-                --prev;
-            }
-        }
-    }
-    
-    inline long long get_min_value_at (long long x) {
-        if (hull.size() == 0)
-            return INF;
-        Point me(x, x, true, &hull);
-        position opt = hull.lower_bound(me);
-        --opt;
-        return opt->x * x + opt->y;
-    }
-    
+const LL is_query=+(1LL<<62);
+struct Line{
+  LL m,b;//compare two lines by increasing slope
+  mutable function<const Line*()> succ;
+  bool operator<(const Line& rhs)const{
+    if(rhs.b!=is_query)return m>rhs.m;//> for min
+    const Line* s=succ();
+    if(!s)return 0;
+    return b-s->b>(s->m-m)*rhs.m;//> for min
+  }};
+struct HullDynamic:public multiset<Line>{
+  bool bad(iterator y){//maintains upper hull for max
+    auto z=next(y);
+    if(y==begin()){
+      if(z==end())return 0;
+      return y->m == z->m && y->b >= z->b;//>= for min
+    }auto x=prev(y);
+    if(z==end())
+      return y->m==x->m && y->b>=x->b; // >= for min
+    return (x->b-y->b)*(z->m-y->m)>=(y->b-z->b)*(y->m-x->m);
+  }
+  void insert_line(LL m,LL b){
+    auto y=insert({ m,b});
+    y->succ=[=]{return next(y)==end()?0:&*next(y);};
+    if(bad(y)){erase(y);return;}
+    while(next(y)!=end() && bad(next(y)))erase(next(y));
+    while(y!=begin() && bad(prev(y)))erase(prev(y));
+  }
+  LL eval(LL x){
+    auto l=*lower_bound((Line){x,is_query});
+    return l.m*x +l.b;
+  }
 };
